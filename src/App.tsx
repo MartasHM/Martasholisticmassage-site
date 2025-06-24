@@ -6,7 +6,7 @@ import Layout from './components/Layout';
 
 export default function App() {
   return (
-    <Router basename="/Martasholisticmassage-site">
+    <Router>
       <Routes>
         <Route
           path="/"
@@ -25,11 +25,11 @@ export default function App() {
 
 function HomeContent() {
   const navigate = useNavigate();
+  const base = import.meta.env.BASE_URL;
 
-const handleBookingClick = (label: string) => {
-  navigate(`/booking?type=${encodeURIComponent(label)}&massage=Clinical%20Massage`);
-};
-
+  const handleBookingClick = (label: string) => {
+    navigate(`/booking?type=${encodeURIComponent(label)}&massage=Clinical%20Massage`);
+  };
 
   return (
     <div style={styles.centeredContainer}>
@@ -56,25 +56,26 @@ const handleBookingClick = (label: string) => {
       {/* Booking Buttons */}
       <div style={styles.buttonGroup}>
         <button onClick={() => handleBookingClick('60-minute Massage')} style={styles.button}>
-  60-minute Massage (£60)
-</button>
-<button onClick={() => handleBookingClick('90-minute Massage')} style={styles.button}>
-  90-minute Massage (£80)
-</button>
-<button onClick={() => handleBookingClick('6-Treatment Package')} style={styles.button}>
-  6-Treatment Package (£310)
-</button>
+          60-minute Massage (£60)
+        </button>
+        <button onClick={() => handleBookingClick('90-minute Massage')} style={styles.button}>
+          90-minute Massage (£80)
+        </button>
+        <button onClick={() => handleBookingClick('6-Treatment Package')} style={styles.button}>
+          6-Treatment Package (£310)
+        </button>
 
         <Link to="/client" style={styles.linkButton}>
           <button style={styles.button}>Returning Client Booking</button>
         </Link>
       </div>
+
       {/* Jing Method Section */}
       <section id="jing" style={styles.aboutSection}>
         <h2 style={styles.sectionTitle}>The Jing Method™</h2>
 
         <img
-          src="/Martasholisticmassage-site/Jing-Method-Therapist.png"
+          src={`${base}Jing-Method-Therapist.png`}
           alt="Jing Method Certified Therapist"
           style={{ ...styles.image, maxWidth: '300px', display: 'block', margin: '0 auto 2rem' }}
         />
@@ -90,7 +91,7 @@ const handleBookingClick = (label: string) => {
         </p>
 
         <img
-          src="The-Jing-Method-Experience.png"
+          src={`${base}The-Jing-Method-Experience.png`}
           alt="The Jing Method Experience"
           style={{ ...styles.image, maxWidth: '600px', display: 'block', margin: '2rem auto' }}
         />
@@ -102,14 +103,14 @@ const handleBookingClick = (label: string) => {
         <p style={styles.paragraph}>
           Hi, I’m Marta — a qualified massage therapist based in Weymouth. After many years working in education, I chose to dedicate myself to health and wellbeing following the COVID pandemic. Massage therapy has become my hobby first and then my part-time job. I feel that my experience and knowledge of wellbeing needs to be offered to all those people who live with daily pain. My objective is not only to reduce or eliminate your pain but also to get you more in control of your health.
         </p>
-        <img src="weymouth1.jpg" alt="Beach Relaxation" style={styles.image} />
+        <img src={`${base}weymouth1.jpg`} alt="Beach Relaxation" style={styles.image} />
         <p style={styles.paragraph}>
           I hold the ACMT qualification — Advanced Clinical Massage Therapist — and I practise the Jing Method™, a highly respected approach to soft tissue therapy in the UK. My qualification is fully accredited by EdExcel, the Sports Massage Association (SMA), and the Complementary Health Professionals (CHP), and is recognised as a professional standard in both advanced clinical massage and sports massage.
         </p>
         <p style={styles.paragraph}>
           I specialise in chronic pain relief — especially for those dealing with long-term discomfort. My holistic approach to massage doesn’t just mean giving a massage and sending someone on their way. It means listening, teaching and empowering. I work best with clients who understand that healing doesn’t always happen from massage alone. Pain doesn’t just go away with weekly sessions and no other changes — it requires lifestyle adjustments, commitment and personal effort. I’m here to guide and empower, but real change happens when the client takes ownership of their healing.
         </p>
-        <img src="weymouth2.png" alt="Weymouth Coastline" style={styles.image} />
+        <img src={`${base}weymouth2.png`} alt="Weymouth Coastline" style={styles.image} />
         <p style={styles.paragraph}>
           My goal is to make myself unnecessary. I want you to walk away from our time together not just feeling better, but knowing how to stay better — and only needing the occasional massage as a form of self-care, not crisis management.
         </p>
