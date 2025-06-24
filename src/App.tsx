@@ -6,7 +6,7 @@ import Layout from './components/Layout';
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/Martasholisticmassage-site">
       <Routes>
         <Route
           path="/"
@@ -73,7 +73,7 @@ function HomeContent() {
         <h2 style={styles.sectionTitle}>The Jing Method™</h2>
 
         <img
-          src="/Jing-Method-Therapist.png"
+          src="/Martasholisticmassage-site/Jing-Method-Therapist.png"
           alt="Jing Method Certified Therapist"
           style={{ ...styles.image, maxWidth: '300px', display: 'block', margin: '0 auto 2rem' }}
         />
@@ -89,7 +89,7 @@ function HomeContent() {
         </p>
 
         <img
-          src="/The-Jing-Method-Experience.png"
+          src="The-Jing-Method-Experience.png"
           alt="The Jing Method Experience"
           style={{ ...styles.image, maxWidth: '600px', display: 'block', margin: '2rem auto' }}
         />

@@ -13,7 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       fontFamily: 'Playfair Display, serif',
     },
     header: {
-      backgroundImage: 'url(/cover.png)',
+      backgroundImage: 'url(cover.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       padding: '1rem 2rem',
@@ -36,7 +36,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div style={styles.layoutWrapper}>
       <header style={styles.header}>
-        <img src="/mhm-logo.png" alt="Logo" style={styles.logo} />
+        <img src="mhm-logo.png" alt="Logo" style={styles.logo} />
       </header>
       <main style={styles.main}>{children}</main>
     </div>
