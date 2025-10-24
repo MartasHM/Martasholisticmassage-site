@@ -32,106 +32,144 @@ function HomeContent() {
   };
 
   return (
-    <div style={styles.centeredContainer}>
-      {/* Navigation Links */}
-      <nav style={styles.navLinks}>
-        <button onClick={() => scrollToSection('booking')} style={styles.navButton}>Book a Massage</button>
-        <button onClick={() => scrollToSection('jing')} style={styles.navButton}>The Jing Method™</button>
-        <button onClick={() => scrollToSection('about')} style={styles.navButton}>About Marta</button>
-        <button onClick={() => scrollToSection('contact')} style={styles.navButton}>Contact</button>
-      </nav>
+    <div style={styles.page}>
+      <div style={styles.centeredContainer}>
+        {/* Navigation Links */}
+        <nav style={styles.navLinks}>
+          <button onClick={() => scrollToSection('booking')} style={styles.navButton}>Book a Massage</button>
+          <button onClick={() => scrollToSection('jing')} style={styles.navButton}>The Jing Method™</button>
+          <button onClick={() => scrollToSection('about')} style={styles.navButton}>About Marta</button>
+          <button onClick={() => scrollToSection('contact')} style={styles.navButton}>Contact</button>
+        </nav>
 
-      <h1 id="booking" style={styles.title}>Marta’s Holistic Massage</h1>
-      <p style={styles.subtitle}>
-        Mobile massage therapy in the comfort of your home — serving Weymouth and surrounding areas (within 10 miles).
-      </p>
+        <h1 id="booking" style={styles.title}>Marta’s Holistic Massage</h1>
+        <p style={styles.subtitle}>
+          Mobile massage therapy in the comfort of your home — serving Weymouth and surrounding areas (within 10 miles).
+        </p>
 
-      <div style={styles.infoBox}>
-        <h3 style={{ marginBottom: '0.5rem' }}>Choose the Right Massage for You</h3>
-        <p><strong>Clinical Massage:</strong> Targeted for pain relief, whether acute (after injury or illness) or chronic (lasting more than 3 months).</p>
-        <p><strong>Relaxation Massage:</strong> Ideal for stress-related tension, promoting general wellbeing and preventing future discomfort.</p>
-        <p><strong>Pregnancy Massage:</strong> Gentle and safe care designed for pain relief and support during pregnancy.</p>
+        <div style={styles.infoBox}>
+          <h3 style={{ marginBottom: '0.5rem' }}>Choose the Right Massage for You</h3>
+          <p><strong>Clinical Massage:</strong> Targeted for pain relief, whether acute (after injury or illness) or chronic (lasting more than 3 months).</p>
+          <p><strong>Relaxation Massage:</strong> Ideal for stress-related tension, promoting general wellbeing and preventing future discomfort.</p>
+          <p><strong>Pregnancy Massage:</strong> Gentle and safe care designed for pain relief and support during pregnancy.</p>
+        </div>
+
+        {/* Booking Buttons */}
+        <div style={styles.buttonGroup}>
+          <button onClick={() => handleBookingClick('60-minute Massage')} style={styles.button}>
+            60-minute Massage (£60)
+          </button>
+          <button onClick={() => handleBookingClick('90-minute Massage')} style={styles.button}>
+            90-minute Massage (£80)
+          </button>
+          <button onClick={() => handleBookingClick('6-Treatment Package')} style={styles.button}>
+            6-Treatment Package (£310)
+          </button>
+
+          <Link to="/client" style={styles.linkButton}>
+            <button style={styles.button}>Returning Client Booking</button>
+          </Link>
+        </div>
+
+        {/* Jing Method Section */}
+        <section id="jing" style={styles.aboutSection}>
+          <h2 style={styles.sectionTitle}>The Jing Method™</h2>
+
+          <img
+            src={`${base}Jing-Method-Therapist.png`}
+            alt="Jing Method Certified Therapist"
+            style={{ ...styles.image, maxWidth: '300px', display: 'block', margin: '0 auto 2rem' }}
+          />
+
+          <p style={styles.paragraph}>
+            The Jing Method™ is an outcome-based, advanced clinical massage system designed to address chronic musculoskeletal pain. It blends trigger point work, fascial techniques, acupressure, stretching, and both Eastern and Western bodywork principles, all rooted in a holistic, neuroscience-based approach.
+          </p>
+          <p style={styles.paragraph}>
+            This method is typically delivered through a structured 6-session treatment plan. Clients benefit from measurable improvements in pain levels, posture, and mobility. Conditions treated include sciatica, migraines, frozen shoulder, fibromyalgia, and more.
+          </p>
+          <p style={styles.paragraph}>
+            Each session includes a consultation, 45 minutes of focused hands-on therapy, and guided aftercare. The Jing Method™ was developed by industry leaders Rachel Fairweather and Meghan Mari, and is practiced by massage therapists, midwives, osteopaths, and other professionals trained in the Jing approach.
+          </p>
+
+          {/* Improved paragraph structure */}
+          <p style={styles.paragraph}>
+            Many of my clients come to me with acute injuries or pain. Often, after just six treatments and without making other changes in their lives, they’re amazed to find their pain completely gone. From there, they usually choose to come for a massage once a month to maintain their wellbeing and prevent future issues.
+          </p>
+
+          <p style={styles.paragraph}>
+            Sometimes, clients have an acute injury that doesn’t fully resolve within six sessions. Even then, they consistently report a significant improvement in both their physical and mental state, along with a noticeable reduction in pain. These clients might continue treatment at a slower pace, gaining better mobility, less pain, and valuable knowledge about how to care for their own bodies. Eventually, many of them move to monthly sessions as part of their self-care routine.
+          </p>
+
+          <p style={styles.paragraph}>
+            The most complex cases I see are clients living with chronic conditions and ongoing pain. These individuals often feel their daily wellbeing slipping away and are unsure how to help themselves. They’ve frequently tried many different therapies without success. Sometimes, their pain doesn’t have a clear cause, yet it overshadows every part of their lives, making even simple daily activities feel overwhelming.
+          </p>
+
+          <p style={styles.paragraph}>
+            While the body is naturally resilient, long-term stress, injury, or emotional strain can lead to chronic conditions that affect both physical and mental health. For chronic pain, massage can provide much-needed relief and comfort, but it often isn’t enough on its own. In these cases, I recommend combining massage therapy with other treatments that focus on the mental and emotional aspects of chronic pain.
+          </p>
+
+          <p style={styles.paragraph}>
+            Even for those who’ve struggled for years, lasting change is absolutely possible. With dedication and the right support, my clients often discover a path back to wellbeing and learn how to maintain it, so they never return to the place where pain ruled their lives. True healing happens when clients feel empowered and take an active role in their journey toward health.
+          </p>
+
+          <img
+            src={`${base}The-Jing-Method-Experience.png`}
+            alt="The Jing Method Experience"
+            style={{ ...styles.image, maxWidth: '600px', display: 'block', margin: '2rem auto' }}
+          />
+        </section>
+
+        {/* About Section */}
+        <section id="about" style={styles.aboutSection}>
+          <h2 style={styles.sectionTitle}>About Marta</h2>
+
+          <img
+            src={`${base}Marta.jpg`}
+            alt="Marta"
+            style={{
+              ...styles.image,
+              display: 'block',
+              margin: '20px auto',
+              borderRadius: '12px',
+              maxWidth: '400px',
+              width: '100%',
+            }}
+          />
+
+          <p style={styles.paragraph}>
+            Hi, I’m Marta — a qualified massage therapist based in Weymouth. After many years working in education, I chose to dedicate myself to health and wellbeing following the COVID pandemic. Massage therapy has become my hobby first and then my part-time job. I feel that my experience and knowledge of wellbeing needs to be offered to all those people who live with daily pain. My objective is not only to reduce or eliminate your pain but also to get you more in control of your health.
+          </p>
+
+          <p style={styles.paragraph}>
+            I hold the ACMT qualification — Advanced Clinical Massage Therapist — and I practise the Jing Method™, a highly respected approach to soft tissue therapy in the UK. My qualification is fully accredited by EdExcel, the Sports Massage Association (SMA), and the Complementary Health Professionals (CHP), and is recognised as a professional standard in both advanced clinical massage and sports massage.
+          </p>
+
+          <p style={styles.paragraph}>
+            I specialise in chronic pain relief — especially for those dealing with long-term discomfort. My holistic approach to massage doesn’t just mean giving a massage and sending someone on their way. It means listening, teaching and empowering. I work best with clients who understand that healing doesn’t always happen from massage alone. Pain doesn’t just go away with weekly sessions and no other changes — it requires lifestyle adjustments, commitment and personal effort. I’m here to guide and empower, but real change happens when the client takes ownership of their healing.
+          </p>
+
+          <p style={styles.paragraph}>
+            My goal is to make myself unnecessary. I want you to walk away from our time together not just feeling better, but knowing how to stay better — and only needing the occasional massage as a form of self-care, not crisis management.
+          </p>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" style={styles.aboutSection}>
+          <h2 style={styles.sectionTitle}>Contact</h2>
+          <p style={styles.paragraph}>
+            Outside service area or prefer to visit Marta’s space? Email{' '}
+            <a href="mailto:martaholisticmassage@gmail.com">martaholisticmassage@gmail.com</a> to discuss options.
+          </p>
+        </section>
+
+        {/* Footer */}
+        <footer style={styles.footer}>
+          <p>
+            Marta’s Holistic Massage © 2025 &nbsp;|&nbsp;
+            <a href="/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+          </p>
+        </footer>
       </div>
-
-      {/* Booking Buttons */}
-      <div style={styles.buttonGroup}>
-        <button onClick={() => handleBookingClick('60-minute Massage')} style={styles.button}>
-          60-minute Massage (£60)
-        </button>
-        <button onClick={() => handleBookingClick('90-minute Massage')} style={styles.button}>
-          90-minute Massage (£80)
-        </button>
-        <button onClick={() => handleBookingClick('6-Treatment Package')} style={styles.button}>
-          6-Treatment Package (£310)
-        </button>
-
-        <Link to="/client" style={styles.linkButton}>
-          <button style={styles.button}>Returning Client Booking</button>
-        </Link>
-      </div>
-
-      {/* Jing Method Section */}
-      <section id="jing" style={styles.aboutSection}>
-        <h2 style={styles.sectionTitle}>The Jing Method™</h2>
-
-        <img
-          src={`${base}Jing-Method-Therapist.png`}
-          alt="Jing Method Certified Therapist"
-          style={{ ...styles.image, maxWidth: '300px', display: 'block', margin: '0 auto 2rem' }}
-        />
-
-        <p style={styles.paragraph}>
-          The Jing Method™ is an outcome-based, advanced clinical massage system designed to address chronic musculoskeletal pain. It blends trigger point work, fascial techniques, acupressure, stretching, and both Eastern & Western bodywork principles — all rooted in a holistic, neuroscience-based approach.
-        </p>
-        <p style={styles.paragraph}>
-          This method is typically delivered through a structured 6-session treatment plan. Clients benefit from measurable improvements in pain levels, posture, and mobility. Conditions treated include sciatica, migraines, frozen shoulder, fibromyalgia, and more.
-        </p>
-        <p style={styles.paragraph}>
-          Each session includes a consultation, 45 minutes of focused hands-on therapy, and guided aftercare. The Jing Method™ was developed by industry leaders Rachel Fairweather and Meghan Mari, and is practiced by massage therapists, midwives, osteopaths and other professionals trained in the Jing approach.
-        </p>
-
-        <img
-          src={`${base}The-Jing-Method-Experience.png`}
-          alt="The Jing Method Experience"
-          style={{ ...styles.image, maxWidth: '600px', display: 'block', margin: '2rem auto' }}
-        />
-      </section>
-
-      {/* About Section */}
-      <section id="about" style={styles.aboutSection}>
-        <h2 style={styles.sectionTitle}>About Marta</h2>
-        <p style={styles.paragraph}>
-          Hi, I’m Marta — a qualified massage therapist based in Weymouth. After many years working in education, I chose to dedicate myself to health and wellbeing following the COVID pandemic. Massage therapy has become my hobby first and then my part-time job. I feel that my experience and knowledge of wellbeing needs to be offered to all those people who live with daily pain. My objective is not only to reduce or eliminate your pain but also to get you more in control of your health.
-        </p>
-        <img src={`${base}weymouth1.jpg`} alt="Beach Relaxation" style={styles.image} />
-        <p style={styles.paragraph}>
-          I hold the ACMT qualification — Advanced Clinical Massage Therapist — and I practise the Jing Method™, a highly respected approach to soft tissue therapy in the UK. My qualification is fully accredited by EdExcel, the Sports Massage Association (SMA), and the Complementary Health Professionals (CHP), and is recognised as a professional standard in both advanced clinical massage and sports massage.
-        </p>
-        <p style={styles.paragraph}>
-          I specialise in chronic pain relief — especially for those dealing with long-term discomfort. My holistic approach to massage doesn’t just mean giving a massage and sending someone on their way. It means listening, teaching and empowering. I work best with clients who understand that healing doesn’t always happen from massage alone. Pain doesn’t just go away with weekly sessions and no other changes — it requires lifestyle adjustments, commitment and personal effort. I’m here to guide and empower, but real change happens when the client takes ownership of their healing.
-        </p>
-        <img src={`${base}weymouth2.png`} alt="Weymouth Coastline" style={styles.image} />
-        <p style={styles.paragraph}>
-          My goal is to make myself unnecessary. I want you to walk away from our time together not just feeling better, but knowing how to stay better — and only needing the occasional massage as a form of self-care, not crisis management.
-        </p>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" style={styles.aboutSection}>
-        <h2 style={styles.sectionTitle}>Contact</h2>
-        <p style={styles.paragraph}>
-          Outside service area or prefer to visit Marta’s space? Email{' '}
-          <a href="mailto:martaholisticmassage@gmail.com">martaholisticmassage@gmail.com</a> to discuss options.
-        </p>
-      </section>
-
-      {/* Footer */}
-      <footer style={styles.footer}>
-        <p>
-          Marta’s Holistic Massage © 2025 &nbsp;|&nbsp;
-          <a href="/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-        </p>
-      </footer>
     </div>
   );
 }
@@ -141,6 +179,14 @@ function scrollToSection(id: string) {
 }
 
 const styles: { [key: string]: CSSProperties } = {
+  // Global font for the entire site
+  page: {
+    fontSize: '18px',
+    lineHeight: '1.7',
+    fontFamily: 'Inter, system-ui, Arial, sans-serif',
+    color: '#222',
+  },
+
   centeredContainer: {
     display: 'flex',
     flexDirection: 'column',
@@ -215,10 +261,8 @@ const styles: { [key: string]: CSSProperties } = {
     textAlign: 'center',
   },
   paragraph: {
-    fontSize: '1rem',
-    lineHeight: '1.6',
     marginBottom: '1.5rem',
-    color: '#333',
+    textAlign:'justify'
   },
   image: {
     width: '100%',
