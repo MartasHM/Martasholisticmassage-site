@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-export default defineConfig(({ command }) => ({
+// Configuration for both local dev and your custom domain
+export default defineConfig({
   plugins: [react()],
-  base: command === 'serve' ? '/' : '/Martasholisticmassage-site/',
-}))
+  base: '/', // ✅ important: custom domains must use root path
+})
