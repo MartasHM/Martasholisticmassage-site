@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import type { CSSProperties } from 'react';
 import Booking from './pages/Booking';
 import Client from './pages/Client';
@@ -6,20 +6,18 @@ import Layout from './components/Layout';
 
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Layout>
-              <HomeContent />
-            </Layout>
-          }
-        />
-        <Route path="/booking" element={<Booking />} />
-        <Route path="/client" element={<Client />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <Layout>
+            <HomeContent />
+          </Layout>
+        }
+      />
+      <Route path="/booking" element={<Booking />} />
+      <Route path="/client" element={<Client />} />
+    </Routes>
   );
 }
 
@@ -91,7 +89,6 @@ function HomeContent() {
             Each session includes a consultation, 45 minutes of focused hands-on therapy, and guided aftercare. The Jing Method™ was developed by industry leaders Rachel Fairweather and Meghan Mari, and is practiced by massage therapists, midwives, osteopaths, and other professionals trained in the Jing approach.
           </p>
 
-          {/* Improved paragraph structure */}
           <p style={styles.paragraph}>
             Many of my clients come to me with acute injuries or pain. Often, after just six treatments and without making other changes in their lives, they’re amazed to find their pain completely gone. From there, they usually choose to come for a massage once a month to maintain their wellbeing and prevent future issues.
           </p>
@@ -179,14 +176,12 @@ function scrollToSection(id: string) {
 }
 
 const styles: { [key: string]: CSSProperties } = {
-  // Global font for the entire site
   page: {
     fontSize: '18px',
     lineHeight: '1.7',
     fontFamily: 'Inter, system-ui, Arial, sans-serif',
     color: '#222',
   },
-
   centeredContainer: {
     display: 'flex',
     flexDirection: 'column',
@@ -262,7 +257,7 @@ const styles: { [key: string]: CSSProperties } = {
   },
   paragraph: {
     marginBottom: '1.5rem',
-    textAlign:'justify'
+    textAlign: 'justify',
   },
   image: {
     width: '100%',
